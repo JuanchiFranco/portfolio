@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import photoPlus from "../assets/projects/phot_plus.jpg";
+import codegen from "../assets/projects/CodeGen.jpg";
+import interactiveCMS from "../assets/projects/Interactve_cms.jpg";
+import comingSoonImage from "../assets/coming-soon.svg";
+---
+
+<section class="p-8 text-center bg-[#1b232b]">
+    <h2 class="mb-8 text-[#0096c7] font-bold">My Projects</h2>
+    <div class="grid grid-cols-[repeat(2,1fr)] gap-8 max-w-screen-xl mx-auto my-0 px-4 py-0">
+        <div class="bg-[#1e3a49] shadow-[0_2px_4px_rgba(173,216,230,0.1)] flex flex-col w-full p-4 rounded-lg">
+            <h3 class="text-[1.17em] font-bold text-[#0096c7] mx-0 my-2">Photo Plus (finished)</h3>
+            <div class="w-full h-[250px] overflow-hidden flex mx-0 my-4">
+                <Image class="w-full h-full object-contain object-center block border-[color:var(--color-secondary)] rounded-lg border-2 border-solid" src={photoPlus} alt="Photo-plus Picture" />
+            </div>
+            <p class="grow text-[#a8c2cc] mb-4">The photo-plus is a strapi plugin that allows you to take pictures with your camera and download them to the folder on your local machine.</p>
+            <a class="text-[#0096c7] font-bold" href="https://github.com/JuanchiFranco/photo-plus" target="_blank">See repository</a>
+        </div>
+        <div class="bg-[#1e3a49] shadow-[0_2px_4px_rgba(173,216,230,0.1)] flex flex-col w-full p-4 rounded-lg">
+            <h3 class="text-[1.17em] font-bold text-[#0096c7] mx-0 my-2">Codegen QR Barcodes (finished)</h3>
+            <div class="w-full h-[250px] overflow-hidden flex mx-0 my-4">
+                <Image class="w-full h-full object-contain object-center block border-[color:var(--color-secondary)] rounded-lg border-2 border-solid" src={codegen} alt="CodeGen Picture" />
+            </div>
+            <p class="grow text-[#a8c2cc] mb-4">CodeGen is a web application that allows you to generate, customize and export QR codes and barcodes.</p>
+            <a class="text-[#0096c7] font-bold" href="https://github.com/JuanchiFranco/codegen-qr-barcodes" target="_blank">See repository</a>
+        </div>
+        <div class="bg-[#1e3a49] shadow-[0_2px_4px_rgba(173,216,230,0.1)] flex flex-col w-full p-4 rounded-lg">
+            <h3 class="text-[1.17em] font-bold text-[#0096c7] mx-0 my-2">Interactive CMS (in progress)</h3>
+            <div class="w-full h-[250px] overflow-hidden flex mx-0 my-4">
+                <Image class="w-full h-full object-contain object-center block border-[color:var(--color-secondary)] rounded-lg border-2 border-solid" src={interactiveCMS} alt="Interactive CMS Picture" />
+            </div>
+            <p class="grow text-[#a8c2cc] mb-4">CMS to manage interactive content such as quizzes, surveys and mini-games.</p>
+            <a class="text-[#0096c7] font-bold" href="https://github.com/JuanchiFranco/interactive-cms" target="_blank">See repository</a>
+        </div>
+        <div class="bg-[#1e3a49] shadow-[0_2px_4px_rgba(173,216,230,0.1)] flex flex-col w-full p-4 rounded-lg">
+            <h3 class="text-[1.17em] font-bold text-[#0096c7] mx-0 my-2">Future Project</h3>
+            <div class="w-full h-[250px] overflow-hidden flex mx-0 my-4">
+                <Image class="w-full h-full object-contain object-center block border-[color:var(--color-secondary)] rounded-lg border-2 border-solid" src={comingSoonImage} alt="Coming Soon" />
+            </div>
+            <p class="grow text-[#a8c2cc] mb-4">Stay tuned for my next exciting project!</p>
+        </div>
+    </div>
+</section>

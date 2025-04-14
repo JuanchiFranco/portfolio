@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/*=============================================
+  VARIABLES: LIGHT & DARK MODE PALETTE
+=============================================*/
+:root {
+    /* Light mode */
+    --color-bg: #f9f9f9;
+    --color-surface: #ffffff;
+    --color-text-primary: #333333;
+    --color-text-secondary: #555555;
+    --color-primary: #0077b6;
+    --color-secondary: #00b4d8;
+    --color-accent: #caf0f8;
+    --color-border: rgba(0, 0, 0, 0.1);
+}
+
+/*=============================================
+    GLOBAL RESET & BASE
+=============================================*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/*=============================================
+    TYPOGRAPHY HIGHLIGHTS
+=============================================*/
+.highlight {
+    color: #00b4d8;
+    font-weight: bold;
+}
+
+strong {
+    color: #00b4d8
+}
+
+em {
+    color: #0096c7;
+}
