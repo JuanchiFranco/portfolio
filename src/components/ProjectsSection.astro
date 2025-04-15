@@ -14,6 +14,14 @@ import { projects } from "../data/projects.js";
                     <Image class="w-full h-full object-contain object-center block border-[color:var(--color-secondary)] rounded-lg border-2 border-solid" src={project.image} alt={project.alt} />
                 </div>
                 <p class="grow text-[#a8c2cc] mb-4">{project.description}</p>
+                <div class="flex flex-wrap justify-center gap-2">
+                    {project.technologies.map((tech) => (
+                        <div class="flex items-center gap-2 bg-[#2a3b47] p-2 rounded-lg">
+                            <img class="w-6 h-6" src={tech.icon} alt={tech.name} title={tech.name} />
+                            <span class="text-[#a8c2cc] text-sm">{tech.name}</span>
+                        </div>
+                    ))}
+                </div>
                 {project.repository && (<a class="text-[#0096c7] font-bold" href={project.repository} target="_blank">See repository</a>)}
             </div>
         ))}
