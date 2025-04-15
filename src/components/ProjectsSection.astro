@@ -11,7 +11,7 @@ import { projects } from "../data/projects.js";
             <div class="bg-[#1e3a49] shadow-[0_2px_4px_rgba(173,216,230,0.1)] flex flex-col w-full p-4 rounded-lg">
                 <h3 class="text-[1.17em] font-bold text-[#0096c7] mx-0 my-2">{project.title} {(project.status)?<small class="text-[#a8c2cc] font-bold">({project.status})</small> : ""}</h3>
                 <div class="w-full h-[250px] overflow-hidden flex mx-0 my-4">
-                    <Image class="w-full h-full object-contain object-center block border-[color:var(--color-secondary)] rounded-lg border-2 border-solid" src={project.image} alt={project.alt} />
+                    <Image class="w-full h-full object-contain object-center block border-[#00b4d8] rounded-lg border-2 border-solid" src={project.image} alt={project.alt} />
                 </div>
                 <p class="grow text-[#a8c2cc] mb-4">{project.description}</p>
                 <div class="flex flex-wrap justify-center gap-2">
