@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AboutSection from '../components/AboutSection.astro';
+const partial = Astro.url.searchParams.has('partial');
+---
+
+{partial 
+	? <h1 class="text-4xl font-bold mb-4 text-center">Proyects</h1>
+	: (
+	  <Layout currentPage="about">       
+		<h1 class="text-4xl font-bold mb-4 text-center">Proyects</h1>
+	  </Layout>
+	)
+}

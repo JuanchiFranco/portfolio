@@ -13,15 +13,15 @@ const { currentPage } = Astro.props;
             <Icon name="about" class="text-2xl" />
             <span>About</span>
         </a>
-        <a class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
+        <a href="/projects" class:font-bold={ currentPage === 'projects'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="folder" class="text-2xl" />
             <span>Projects</span>
         </a>
-        <a class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
+        <a href="/skills" class:font-bold={ currentPage === 'skills'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="skills" class="text-2xl" />
             <span>Skills</span>
         </a>
-        <a class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
+        <a href="/contact" class:font-bold={ currentPage === 'contact'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="contact" class="text-2xl" />
             <span>Contact</span>
         </a>
