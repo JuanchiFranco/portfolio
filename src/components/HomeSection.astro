@@ -1,8 +1,37 @@
-<section id="home" class="bg-[#1e3a49] text-[#0096c7] text-center px-4 py-16">
-    <h1 class="text-[2.5rem] mb-2 font-bold">Hi, I'm Juan Darío Franco Vargas</h1>
-    <p class="w-[95%] max-w-[900px] text-center text-[1.1rem] leading-[1.8] text-[#a8c2cc] mx-auto my-6 px-4 py-0">
-        I'm a systems engineer specialized in backend development with expertise in 
-        <span class="highlight">Laravel</span>, <span class="highlight">Strapi</span>, and <span class="highlight">Node.js</span>. 
-        My focus is on building <em>scalable</em>, <em>secure</em>, and <em>well-tested solutions</em> that deliver value to projects.
-    </p>
+---
+import { Image } from "astro:assets";
+import profileImage from "../assets/profile.jpg";
+---
+
+<section id="home" class="text-[#0096c7] text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center">
+    <Image src={profileImage} alt="Profile Picture" class="w-[150px] h-[150px] object-cover rounded-[50%] border-[3px] border-solid border-[#00b4d8]" width={200} height={200} loading="lazy" />
+    <h1 class="text-[2.5rem] mb-2 font-bold">Hey, I'm Juan Franco Vargas</h1>
+    <h2 id="dynamic-text" class="text-[1.5rem] mb-4 h-[2em]">Backend Developer</h2>
 </section>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const texts = ["Backend Developer", "Passionate about Web Development"];
+        let index = 0, charIndex = 0, isDeleting = false;
+
+        function typeEffect() {
+        const current = texts[index];
+        const displayed = current.slice(0, charIndex);
+        document.getElementById("dynamic-text").textContent = displayed;
+
+        if (!isDeleting && charIndex < current.length) {
+            charIndex++;
+            setTimeout(typeEffect, 100);
+        } else if (isDeleting && charIndex > 0) {
+            charIndex--;
+            setTimeout(typeEffect, 50);
+        } else {
+            isDeleting = !isDeleting;
+            if (!isDeleting) index = (index + 1) % texts.length;
+            setTimeout(typeEffect, 1000);
+        }
+        }
+
+        typeEffect();
+    });
+</script>

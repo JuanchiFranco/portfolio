@@ -1,35 +1,38 @@
-<header class="bg-gradient-to-r from-[#0096c7] to-[#023e8a] text-white text-center relative px-0 py-4" style="height: 80px;">
+<header class="bg-gradient-to-r from-white via-white to-[#0096c7] text-[#0096c7] text-center relative px-0 py-4 flex-none" style="height: 80px;">
   <h1 id="dynamic-heading" class="m-0 text-center block text-[2em] font-bold">Juan Franco</h1>
 </header>
 
 <script is:inline>
-  const texts = ["Juan Franco", "Backend Developer"];
-  let index = 0;
-  let charIndex = 0;
-  let isDeleting = false;
+  document.addEventListener('DOMContentLoaded', () => {
+    const texts = ["Juan Franco", "Backend Developer"];
+    let index = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-  const typeEffect = () => {
-    const currentText = texts[index];
-    const displayedText = currentText.slice(0, charIndex);
+    const typeEffect = () => {
+      const currentText = texts[index];
+      const displayedText = currentText.slice(0, charIndex);
 
-    document.getElementById("dynamic-heading").textContent = displayedText;
+      document.getElementById("dynamic-heading").textContent = displayedText;
 
-    if (!isDeleting && charIndex < currentText.length) {
-      charIndex++;
-      setTimeout(typeEffect, 100); // Velocidad al escribir
-    } else if (isDeleting && charIndex > 0) {
-      charIndex--;
-      setTimeout(typeEffect, 50); // Velocidad al borrar
-    } else {
-      isDeleting = !isDeleting;
+      if (!isDeleting && charIndex < currentText.length) {
+        charIndex++;
+        setTimeout(typeEffect, 100); // Velocidad al escribir
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, 50); // Velocidad al borrar
+      } else {
+        isDeleting = !isDeleting;
 
-      if (!isDeleting) {
-        index = (index + 1) % texts.length;
+        if (!isDeleting) {
+          index = (index + 1) % texts.length;
+        }
+
+        setTimeout(typeEffect, 1000); // Pausa antes de cambiar
       }
+    };
 
-      setTimeout(typeEffect, 1000); // Pausa antes de cambiar
-    }
-  };
-
-  typeEffect();
+    typeEffect();
+  });
+  
 </script>

@@ -1,26 +1,27 @@
 ---
 import { Icon } from 'astro-icon/components'
+const { currentPage } = Astro.props;
 ---
 
-<footer class="bg-gradient-to-r from-[#023e8a] to-[#0096c7] text-white text-center" style="height: 80px;">
+<footer class="bg-gradient-to-r from-[#0096c7] via-white to-white text-[#0096c7] text-center flex-none" style="height: 80px;">
     <div class="flex justify-center space-x-4 items-center h-full">
-        <button class="bg-transparent hover:bg-[#0096c7] text-white px-4 rounded flex items-center flex-col">
+        <a href="/" class:font-bold={ currentPage === 'home'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="home" class="text-2xl" />
             <span>Home</span>
-        </button>
-        <button class="bg-transparent hover:bg-[#0096c7] text-white px-4 rounded flex items-center flex-col">
+        </a>
+        <button class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="about" class="text-2xl" />
             <span>About</span>
         </button>
-        <button class="bg-transparent hover:bg-[#0096c7] text-white px-4 rounded flex items-center flex-col">
+        <button class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="folder" class="text-2xl" />
             <span>Projects</span>
         </button>
-        <button class="bg-transparent hover:bg-[#0096c7] text-white px-4 rounded flex items-center flex-col">
+        <button class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="skills" class="text-2xl" />
             <span>Skills</span>
         </button>
-        <button class="bg-transparent hover:bg-[#0096c7] text-white px-4 rounded flex items-center flex-col">
+        <button class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="contact" class="text-2xl" />
             <span>Contact</span>
         </button>
