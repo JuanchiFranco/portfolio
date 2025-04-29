@@ -1,31 +1,28 @@
-<footer id="contact" class="bg-[#0096c7] text-white text-center p-8">
-    <h2 class="text-[1.17em] font-bold mb-4">
-        Contact Me
-    </h2>
-    <p class="text-white">
-        You can contact me through:
-    </p>
-    <div class="flex justify-center gap-8 mt-6">
-        <a href="mailto:francovargasjuandario@gmail.com" class="social-icon w-[50px] h-[50px] bg-[rgba(255,255,255,0.1)] border flex items-center justify-center rounded-[50%] border-solid border-[rgba(255,255,255,0.2)]" aria-label="Email">
-            <i class="fas fa-envelope text-2xl text-white"></i>
-        </a>
-        <a href="https://github.com/JuanchiFranco" target="_blank" class="social-icon w-[50px] h-[50px] bg-[rgba(255,255,255,0.1)] border flex items-center justify-center rounded-[50%] border-solid border-[rgba(255,255,255,0.2)]" aria-label="GitHub">
-            <i class="fab fa-github text-2xl text-white"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/juan-dar%C3%ADo-franco-vargas-18906822b/" target="_blank" class="social-icon w-[50px] h-[50px] bg-[rgba(255,255,255,0.1)] border flex items-center justify-center rounded-[50%] border-solid border-[rgba(255,255,255,0.2)]" aria-label="LinkedIn">
-            <i class="fab fa-linkedin text-2xl text-white"></i>
-        </a>
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<footer class="bg-gradient-to-r from-[#023e8a] to-[#0096c7] text-white text-center" style="height: 80px;">
+    <div class="flex justify-center space-x-4 items-center h-full">
+        <button class="bg-transparent hover:bg-[#0096c7] text-white px-4 rounded flex items-center flex-col">
+            <Icon name="home" class="text-2xl" />
+            <span>Home</span>
+        </button>
+        <button class="bg-transparent hover:bg-[#0096c7] text-white px-4 rounded flex items-center flex-col">
+            <Icon name="about" class="text-2xl" />
+            <span>About</span>
+        </button>
+        <button class="bg-transparent hover:bg-[#0096c7] text-white px-4 rounded flex items-center flex-col">
+            <Icon name="folder" class="text-2xl" />
+            <span>Projects</span>
+        </button>
+        <button class="bg-transparent hover:bg-[#0096c7] text-white px-4 rounded flex items-center flex-col">
+            <Icon name="skills" class="text-2xl" />
+            <span>Skills</span>
+        </button>
+        <button class="bg-transparent hover:bg-[#0096c7] text-white px-4 rounded flex items-center flex-col">
+            <Icon name="contact" class="text-2xl" />
+            <span>Contact</span>
+        </button>
     </div>
 </footer>
-
-<style>
-    .social-icon {
-        transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-    }
-
-    .social-icon:hover {
-        transform: translateY(-3px);
-        background-color: rgba(255,255,255,0.2);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-</style>

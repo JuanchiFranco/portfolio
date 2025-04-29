@@ -1,11 +1,35 @@
-<header class="bg-cyan-600 text-white text-center relative px-0 py-4">
-  <h1 class="m-0 text-center block text-[2em] font-bold">Juan Franco | Backend Developer</h1>
-  <nav>
-    <ul class="flex justify-center gap-4 mt-2">
-      <li><a class="text-white font-bold hover:no-underline" href="#home">Home</a></li>
-      <li><a class="text-white font-bold hover:no-underline" href="#about">About</a></li>
-      <li><a class="text-white font-bold hover:no-underline" href="#projects">Projects</a></li>
-      <li><a class="text-white font-bold hover:no-underline" href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<header class="bg-gradient-to-r from-[#0096c7] to-[#023e8a] text-white text-center relative px-0 py-4" style="height: 80px;">
+  <h1 id="dynamic-heading" class="m-0 text-center block text-[2em] font-bold">Juan Franco</h1>
 </header>
+
+<script is:inline>
+  const texts = ["Juan Franco", "Backend Developer"];
+  let index = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const typeEffect = () => {
+    const currentText = texts[index];
+    const displayedText = currentText.slice(0, charIndex);
+
+    document.getElementById("dynamic-heading").textContent = displayedText;
+
+    if (!isDeleting && charIndex < currentText.length) {
+      charIndex++;
+      setTimeout(typeEffect, 100); // Velocidad al escribir
+    } else if (isDeleting && charIndex > 0) {
+      charIndex--;
+      setTimeout(typeEffect, 50); // Velocidad al borrar
+    } else {
+      isDeleting = !isDeleting;
+
+      if (!isDeleting) {
+        index = (index + 1) % texts.length;
+      }
+
+      setTimeout(typeEffect, 1000); // Pausa antes de cambiar
+    }
+  };
+
+  typeEffect();
+</script>
