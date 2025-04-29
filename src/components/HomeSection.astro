@@ -1,20 +1,31 @@
 ---
 import { Image } from "astro:assets";
 import profileImage from "../assets/profile.jpg";
+import { Icon } from "astro-icon/components";
 ---
 
 <section id="home" class="text-[#0096c7] text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center">
     <Image src={profileImage} alt="Profile Picture" class="w-[150px] h-[150px] object-cover rounded-[50%] border-[3px] border-solid border-[#00b4d8]" width={200} height={200} loading="lazy" />
     <h1 class="text-[2.5rem] mb-2 font-bold">Hey, I'm Juan Franco Vargas</h1>
-    <h2 id="dynamic-text" class="text-[1.5rem] mb-4 h-[2em]">Backend Developer</h2>
+    <h2 id="dynamic-text" class="text-[1.5rem] mb-4 h-[1.5em]">Backend Developer</h2>
+    <div class="flex gap-4">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-[#00b4d8] text-[2rem] hover:text-[#0077b6]">
+            <Icon name="github" />
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="text-[#00b4d8] text-[2rem] hover:text-[#0077b6]">
+            <Icon name="linkedin" />
+        </a>
+        <a href="mailto:your-email@example.com" class="text-[#00b4d8] text-[2rem] hover:text-[#0077b6]">
+            <Icon name="email" />
+        </a>
+    </div>
 </section>
 
 <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-        const texts = ["Backend Developer", "Passionate about Web Development"];
-        let index = 0, charIndex = 0, isDeleting = false;
+    const texts = ["Backend Developer", "Passionate about Web Development"];
+    let index = 0, charIndex = 0, isDeleting = false;
 
-        function typeEffect() {
+    function typeEffect() {
         const current = texts[index];
         const displayed = current.slice(0, charIndex);
         document.getElementById("dynamic-text").textContent = displayed;
@@ -30,8 +41,8 @@ import profileImage from "../assets/profile.jpg";
             if (!isDeleting) index = (index + 1) % texts.length;
             setTimeout(typeEffect, 1000);
         }
-        }
+    }
 
-        typeEffect();
-    });
+    // Ejecutar el efecto cada vez que el componente se renderice
+    typeEffect();
 </script>
