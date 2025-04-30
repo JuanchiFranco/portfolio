@@ -5,23 +5,23 @@ const { currentPage } = Astro.props;
 
 <footer class="bg-gradient-to-r from-[#0096c7] via-white to-white text-[#0096c7] text-center flex-none" style="height: 80px;">
     <nav class="flex justify-center space-x-4 items-center h-full">
-        <a href="#" class:font-bold={ currentPage === 'home'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
+        <a href="/" class:font-bold={ currentPage === 'home'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="home" class="text-2xl" />
             <span>Home</span>
         </a>
-        <a href="#about" class:font-bold={ currentPage === 'about'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
+        <a href="/about" class:font-bold={ currentPage === 'about'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="about" class="text-2xl" />
             <span>About</span>
         </a>
-        <a href="#projects" class:font-bold={ currentPage === 'projects'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
+        <a href="/projects" class:font-bold={ currentPage === 'projects'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="folder" class="text-2xl" />
             <span>Projects</span>
         </a>
-        <a href="#skills" class:font-bold={ currentPage === 'skills'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
+        <a href="/skills" class:font-bold={ currentPage === 'skills'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="skills" class="text-2xl" />
             <span>Skills</span>
         </a>
-        <a href="#contact" class:font-bold={ currentPage === 'contact'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
+        <a href="/contact" class:font-bold={ currentPage === 'contact'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="contact" class="text-2xl" />
             <span>Contact</span>
         </a>

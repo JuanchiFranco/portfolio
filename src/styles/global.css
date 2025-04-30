@@ -24,7 +24,7 @@ html {
 =============================================*/
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Lucida Console", "Courier New", monospace;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -35,16 +35,16 @@ body {
     TYPOGRAPHY HIGHLIGHTS
 =============================================*/
 .highlight {
-    color: #00b4d8;
+    color: #016074;
     font-weight: bold;
 }
 
 strong {
-    color: #00b4d8
+    color: #016074
 }
 
 em {
-    color: #0096c7;
+    color: #016074;
 }
 
 .parallax-section {

@@ -1,6 +1,8 @@
 ---
 import Analytics from '@vercel/analytics/astro'
 import "../styles/global.css";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
@@ -34,7 +36,11 @@ import "../styles/global.css";
     <meta name="twitter:image" content="/profile.jpg">
   </head>
   <body class="bg-black text-gray-200">
-    <slot />
+    <Header />
+    <main class="bg-gradient-to-r from-[#0096c7] via-white to-[#0096c7] flex flex-col flex-1 overflow-hidden h-[100vh-160px]">
+      <slot />
+    </main>
+    <Footer />
     <Analytics />
   </body>
 </html>
