@@ -1,3 +1,7 @@
+---
+import Analytics from '@vercel/analytics/astro'
+---
+
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
@@ -30,5 +34,6 @@
   </head>
   <body class="bg-black text-gray-200">
     <slot />
+    <Analytics />
   </body>
 </html>
