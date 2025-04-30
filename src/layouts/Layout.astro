@@ -1,6 +1,5 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Analytics from '@vercel/analytics/astro'
 import "../styles/global.css";
 ---
 
@@ -36,5 +35,6 @@ import "../styles/global.css";
   </head>
   <body class="bg-black text-gray-200">
     <slot />
+    <Analytics />
   </body>
 </html>
