@@ -1,14 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HomeSection from '../components/HomeSection.astro';
-const partial = Astro.url.searchParams.has('partial');
+import AboutSection from '../components/AboutSection.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-{partial 
-	? <HomeSection />
-	: (
-	  <Layout currentPage="home">       
+<Layout>
+	<Header />
+	<main class="bg-gradient-to-r from-[#0096c7] via-white to-[#0096c7] flex flex-col flex-1 overflow-hidden h-[100vh-160px]">
 		<HomeSection />
-	  </Layout>
-	)
-}
+		<AboutSection />
+	</main>
+	<Footer />
+</Layout>
+
+
+<style>
+	.main {
+		overflow-y: scroll;
+  		scroll-snap-type: y mandatory;
+	}
+
+	main section {
+		scroll-snap-align: start;
+	}
+</style>
+	
