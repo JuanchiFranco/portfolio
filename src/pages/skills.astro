@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import AboutSection from '../components/AboutSection.astro';
+import SkillSection from '../components/SkillSection.astro';
 const partial = Astro.url.searchParams.has('partial');
 ---
 
 {partial 
-	? <div class="text-4xl font-bold mb-4 flex justify-center text-center">Skills</div>
+	? <SkillSection />
 	: (
-	  <Layout currentPage="about">       
-		<h1 class="text-4xl font-bold mb-4 text-center">Skills</h1>
+	  <Layout currentPage="skills">       
+		<SkillSection />
 	  </Layout>
 	)
 }

@@ -1,0 +1,143 @@
+---
+import SkillItem from './SkillItem.astro'
+
+const skillCategories = [
+    { key: 'languages', label: 'Programming languages' },
+    { key: 'frameworks', label: 'Libraries/Frameworks' },
+    { key: 'databases', label: 'Databases' },
+    { key: 'tools', label: 'Tools/platforms' },
+    { key: 'methodologies', label: 'Methodologies & soft skills' },
+]
+
+const skills = {
+    languages: [
+        {
+            name: 'JavaScript',
+            icon: "skills/javascript",
+        },
+        {
+            name: 'Node.js',
+            icon: "skills/nodejs"
+        },
+        {
+            name: 'Java',
+            icon: "skills/java"
+        },
+        {
+            name: 'PHP',
+            icon: "skills/php"
+        },
+        {
+            name: 'HTML',
+            icon: "skills/html"
+        },
+        {
+            name: 'CSS',
+            icon: "skills/css"
+        }
+    ],
+    frameworks: [
+        {
+            name: 'Strapi CMS',
+            icon: "skills/strapi"
+        },
+        {
+            name: 'Express.js',
+            icon: "skills/express"
+        },
+        {
+            name: 'Spring Boot',
+            icon: "skills/spring"
+        },
+        {
+            name: 'Laravel',
+            icon: "skills/laravel"
+        },
+        {
+            name: 'Jest',
+            icon: "skills/jest"
+        },
+        {
+            name: 'PHPUnit',
+            icon: "skills/phpunit"
+        },
+        {
+            name: 'Tailwind CSS',
+            icon: "skills/tailwindcss"
+        }
+    ],
+    databases: [
+        {
+            name: 'MySQL',
+            icon: "skills/mysql"
+        },
+        {
+            name: 'PostgreSQL',
+            icon: "skills/postgresql"
+        },
+        {
+            name: 'MongoDB',
+            icon: "skills/mongodb"
+        }
+    ],
+    tools: [
+        {
+            name: 'Git',
+            icon: "skills/git"
+        },
+        {
+            name: 'Docker',
+            icon: "skills/docker"
+        },
+        {
+            name: 'Postman',
+            icon: "skills/postman"
+        }
+    ],
+    methodologies: [
+        {
+            name: 'Agile/Scrum',
+        },
+        {
+            name: 'Effective communication'
+        },
+        {
+            name: 'Teamwork'
+        },
+        {
+            name: 'Problem-solving'
+        },
+        {
+            name: 'Adaptability'
+        }
+    ]
+}
+---
+
+<section id="skills" class="text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center">
+    <h2 class="text-[#0096c7] mb-4 font-bold text-[2.5rem]">My Skills</h2>
+    <div class="max-w-screen-xl mx-auto">
+      <table class="table-auto w-full border-collapse border border-[#0096c7]">
+        <thead>
+          <tr>
+            <th class="border border-[#0096c7] px-4 py-2 text-[#0096c7] text-left">Category</th>
+            <th class="border border-[#0096c7] px-4 py-2 text-[#0096c7] text-left">Technologies</th>
+          </tr>
+        </thead>
+        <tbody>
+          {skillCategories.map(({ key, label }) => (
+            <tr>
+              <td class="border border-[#0096c7] px-4 py-2 text-[#0096c7] font-bold">{label}</td>
+              <td class="border border-[#0096c7] px-4 py-2">
+                <div class="flex gap-4 flex-wrap">
+                  {skills[key].map((item) => (
+                    <SkillItem {...item} />
+                  ))}
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
