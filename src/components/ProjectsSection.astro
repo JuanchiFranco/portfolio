@@ -4,16 +4,16 @@ import { projects } from "../data/projects.js";
 ---
 
 <section id="projects" class="text-[#0096c7] text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center">
-    <h2 class="mb-4 font-bold text-[2.5rem]">Projects</h2>
-    <div class="grid grid-cols-[repeat(2,1fr)] gap-8 max-w-screen-xl mx-auto my-0 px-4 py-0">
+    <h2 class="mb-4 font-bold text-[2.5rem] sm:text-[2rem]">Projects</h2>
+    <div class="grid grid-cols-[repeat(2,1fr)] gap-8 max-w-screen-xl mx-auto my-0 px-4 py-0 sm:grid-cols-1">
 
         {projects.map((project) => (
             <div class="flex flex-col w-full p-4 rounded-lg border-solid border-[#0096c7] mb-4 border-2 justify-center items-center">
                 <h3 class="text-[1.20em] font-bold text-[#0096c7] mx-0 my-2">{project.title} {(project.status)?<small class="text-[#016074] font-bold">({project.status})</small> : ""}</h3>
-                <div class="h-[250px] w-[70%] overflow-hidden flex mx-0 my-4">
+                <div class="h-[250px] w-[70%] overflow-hidden flex mx-0 my-4 sm:w-full">
                     <Image class="w-full h-full object-contain object-center block" src={project.image} alt={project.alt} />
                 </div>
-                <p class="grow mb-4 text-[1.1rem] leading-[1.7] text-[#0096c7]">{project.description}</p>
+                <p class="grow mb-4 text-[1.1rem] leading-[1.7] text-[#0096c7] sm:text-[1rem]">{project.description}</p>
                 <div class="flex flex-wrap justify-center gap-2">
                     {project.technologies.map((tech) => (
                         <div class="flex items-center gap-2 p-2 rounded-lg">

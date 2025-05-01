@@ -1,26 +1,41 @@
 ---
 import { Icon } from 'astro-icon/components';
+const socialLinks = [
+    {
+        name: 'github.com/JuanchiFranco',
+        url: 'https://github.com/JuanchiFranco',
+        icon: 'github',
+    },
+    {
+        name: 'juanfrancovargas-dev',
+        url: 'https://linkedin.com/in/juanfrancovargas-dev',
+        icon: 'linkedin',
+    },
+    {
+        name: 'francovargajuandario@gmail.com',
+        url: 'mailto:francovargajuandario@gmail.com',
+        icon: 'email',
+    },
+    {
+        name: 'Colombia',
+        url: null,
+        icon: 'map-pin',
+    },
+];
 ---
 
 <section id="contact" class="text-[#0096c7] text-center px-4 py-8 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center">
-    <h1 class="text-[2.5rem] mb-2 font-bold">Contact Me</h1>
-    <h2 class="text-[1.5rem] mb-4">Let's connect!</h2>
-    <div class="flex flex-col gap-4 border-[1px] rounded-lg border-solid border-[#0096c7] p-4 mb-4">
-        <a href="" target="_blank" rel="noopener noreferrer" class="text-[#00b4d8] text-[2rem] hover:text-[#0077b6] flex items-center gap-2">
-            <Icon name="github" />
-            <p class="text-[1rem]">github.com/JuanchiFranco</p>
-        </a>
-        <a href="https://linkedin.com/in/juanfrancovargas-dev/" target="_blank" rel="noopener noreferrer" class="text-[#00b4d8] text-[2rem] hover:text-[#0077b6] flex items-center gap-2">
-            <Icon name="linkedin" />
-            <p class="text-[1rem]">linkedin.com/in/juanfrancovargas-dev</p>
-        </a>
-        <a href="mailto:francovargajuandario@gmail.com" class="text-[#00b4d8] text-[2rem] hover:text-[#0077b6] flex items-center gap-2">
-            <Icon name="email" />
-            <p class="text-[1rem]">francovargajuandario@gmail.com</p>
-        </a>
-        <a rel="noopener noreferrer" class="text-[#00b4d8] text-[2rem] hover:text-[#0077b6] flex items-center gap-2">
-            <Icon name="map-pin" />
-            <p class="text-[1rem]">Colombia</p>
-        </a>
+    <h1 class="text-[2.5rem] mb-2 font-bold sm:text-[2rem] md:text-[2.5rem]">Contact Me</h1>
+    <h2 class="text-[1.5rem] mb-4 sm:text-[1.25rem] md:text-[1.5rem]">Let's connect!</h2>
+    <div class="flex flex-col gap-4 border-[1px] rounded-lg border-solid border-[#0096c7] p-4 mb-4 w-full max-w-[500px] sm:max-w-[400px] md:max-w-[500px]">
+        {socialLinks.map(link => (
+            <a 
+                {...(link.url ? { href: link.url, target: "_blank", rel: "noopener noreferrer" } : {})} 
+                class="text-[#00b4d8] text-[2rem] hover:text-[#0077b6] flex items-center gap-2 sm:text-[1.5rem] md:text-[2rem]"
+            >
+                <Icon name={link.icon} class="w-6 h-6 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+                <p class="text-[1rem] sm:text-[0.875rem] md:text-[1rem]">{link.name}</p>
+            </a>
+        ))}
     </div>
 </section>

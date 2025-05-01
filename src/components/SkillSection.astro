@@ -114,10 +114,10 @@ const skills = {
 }
 ---
 
-<section id="skills" class="text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center">
-    <h2 class="text-[#0096c7] mb-4 font-bold text-[2.5rem]">My Skills</h2>
+<section id="skills" class="text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center mt-8">
+    <h2 class="text-[#0096c7] mb-4 font-bold text-[2.5rem] sm:text-[2rem]">My Skills</h2>
     <div class="max-w-screen-xl mx-auto">
-      <table class="table-auto w-full border-collapse border border-[#0096c7]">
+      <table class="table-auto w-full border-collapse border border-[#0096c7] text-sm sm:text-xs">
         <thead>
           <tr>
             <th class="border border-[#0096c7] px-4 py-2 text-[#0096c7] text-left">Category</th>
@@ -140,4 +140,15 @@ const skills = {
         </tbody>
       </table>
     </div>
-  </section>
+</section>
+<style>
+  @media (max-width: 640px) {
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+    th, td {
+      white-space: nowrap;
+    }
+  }
+</style>
