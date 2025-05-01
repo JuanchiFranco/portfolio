@@ -22,7 +22,18 @@ import { projects } from "../data/projects.js";
                         </div>
                     ))}
                 </div>
-                {project.repository && (<a class="text-[#0096c7] font-bold" href={project.repository} target="_blank">See repository</a>)}
+                <div class="flex flex-wrap justify-center gap-2 mt-4">
+                    {project.repository && (
+                        <a class="bg-[#0096c7] text-white font-bold py-1 px-3 rounded hover:bg-[#0077a3] transition-colors w-[120px] text-center inline-block text-sm" href={project.repository} target="_blank">
+                            Repository
+                        </a>
+                    )}
+                    {project.liveDemo && (
+                        <a class="bg-[#0096c7] text-white font-bold py-1 px-3 rounded hover:bg-[#0077a3] transition-colors w-[120px] text-center inline-block text-sm ml-2" href={project.liveDemo} target="_blank">
+                            See demo
+                        </a>
+                    )}
+                </div>
             </div>
         ))}
     </div>

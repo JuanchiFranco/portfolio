@@ -2,8 +2,24 @@ import photoPlus from "../assets/projects/phot_plus.jpg";
 import codegen from "../assets/projects/CodeGen.jpg";
 import interactiveCMS from "../assets/projects/Interactve_cms.jpg";
 import comingSoonImage from "../assets/coming-soon.svg";
+import unitConverter from "../assets/projects/converter.jpg";
 
 export const projects = [
+    {
+        title: "Unit Converter",
+        status: "finished",
+        description: "My personal portfolio website, built with React and Tailwind CSS.",
+        image: unitConverter,
+        alt: "Unit Converter Picture",
+        repository: "https://github.com/JuanchiFranco/unit-converter",
+        technologies: [
+            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tailwindcss.svg" },
+            { name: "JavaScript", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg" },
+            { name: "HTML5", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg" },
+            { name: "CSS3", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/css3.svg" }
+        ],
+        liveDemo: "https://unit-converter-beryl-delta.vercel.app/"
+    },
     {
         title: "Photo Plus",
         status: "finished",
@@ -15,7 +31,8 @@ export const projects = [
             { name: "Strapi", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/strapi.svg" },
             { name: "JavaScript", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg" },
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nodedotjs.svg" }
-        ]
+        ],
+        liveDemo: null
     },
     {
         title: "Codegen QR Barcodes",
@@ -31,7 +48,8 @@ export const projects = [
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nodedotjs.svg" },
             { name: "HTML5", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg" },
             { name: "CSS3", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/css3.svg" },
-        ]
+        ],
+        liveDemo: null
     },
     {
         title: "Interactive CMS",
@@ -47,7 +65,8 @@ export const projects = [
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nodedotjs.svg" },
             { name: "Strapi", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/strapi.svg" },
             { name: "MySQL", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mysql.svg" }
-        ]
+        ],
+        liveDemo: null
     },
     {
         title: "Future Project",
@@ -56,6 +75,7 @@ export const projects = [
         image: comingSoonImage,
         alt: "Coming Soon",
         repository: null,
-        technologies: []
+        technologies: [],
+        liveDemo: null
     }
 ];
