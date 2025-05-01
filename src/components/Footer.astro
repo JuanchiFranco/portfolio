@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components'
 const { currentPage } = Astro.props;
 ---
 
-<footer class="bg-gradient-to-r from-[#0096c7] via-white to-white text-[#0096c7] text-center flex-none" style="height: 80px;">
+<footer class="bg-gradient-to-r from-[#0096c7] via-white to-white text-[#0096c7] text-center flex-none fixed bottom-0 left-0 w-full" style="height: 80px;">
     <nav class="flex justify-center space-x-4 items-center h-full">
         <a href="/" class:font-bold={ currentPage === 'home'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-4 rounded flex items-center flex-col">
             <Icon name="home" class="text-2xl" />

@@ -25,7 +25,7 @@ export const projects = [
         alt: "CodeGen Picture",
         repository: "https://github.com/JuanchiFranco/codegen-qr-barcodes",
         technologies: [
-            { name: "express", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/express.svg" },
+            { name: "Express", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/express.svg" },
             { name: "MySQL", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mysql.svg" },
             { name: "React", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/react.svg" },
             { name: "Node.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nodedotjs.svg" },
