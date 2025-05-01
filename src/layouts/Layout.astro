@@ -44,3 +44,58 @@ import Footer from '../components/Footer.astro';
     <Analytics />
   </body>
 </html>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1) Función que “resucita” cada <script> inline o con src para que se ejecute otra vez.
+    function reviveScripts(container) {
+      const scripts = Array.from(container.querySelectorAll('script'));
+      scripts.forEach(old => {
+        const neo = document.createElement('script');
+        // copiar todos los atributos (type, src…)
+        for (const { name, value } of Array.from(old.attributes)) {
+          neo.setAttribute(name, value);
+        }
+        // copiar inline
+        neo.textContent = old.textContent;
+        // reemplazar e invocar
+        old.replaceWith(neo);
+      });
+    }
+
+    // 2) Tu función de navegación parcial
+    const navLinks = document.querySelectorAll('footer nav a');
+
+    async function loadMain(href, replace = false) {
+      const url = href + '?partial=1';
+      const res = await fetch(url);
+      const html = await res.text();
+
+      const main = document.querySelector('main');
+      main.innerHTML = html;
+
+      // 3) resucitamos todos los scripts
+      reviveScripts(main);
+
+      // 4) AHORA: si al reinyectar existe el dyn-text... volvemos a llamar a typeEffect
+      if (document.getElementById('dynamic-text') && typeof window.typeEffect === 'function') {
+        window.typeEffect();
+      }
+
+      // 5) history
+      if (replace) history.replaceState(null, '', href);
+      else       history.pushState(null, '', href);
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        loadMain(link.getAttribute('href'));
+      });
+    });
+
+    window.addEventListener('popstate', () => {
+      loadMain(location.pathname, /*replace=*/true);
+    });
+  });
+</script>
