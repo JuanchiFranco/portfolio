@@ -2,15 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 import HomeSection from '../components/HomeSection.astro';
 
-const url = new URL(Astro.request.url);
-const partial = url.searchParams.has('partial');
+let content;
+try {
+  const url = new URL(Astro.request.url);
+  const partial = url.searchParams.has('partial');
+
+  content = partial
+    ? <HomeSection />
+    : (
+      <Layout currentPage="home">
+        <HomeSection />
+      </Layout>
+    );
+} catch (err) {
+  console.error("[index.astro] Error al parsear URL o renderizar:", err);
+  // Opcional: forzar un status 500 visible
+  Astro.response.status = 500;
+  content = `Internal Server Error`;
+}
 ---
 
-{partial 
-	? <HomeSection />
-	: (
-		<Layout currentPage="home">
-		<HomeSection />
-		</Layout>
-	)
-}
+{content}
