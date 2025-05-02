@@ -5,11 +5,11 @@ import react from '@astrojs/react';
 
 import vercel from '@astrojs/vercel';
 
+import icon from 'astro-icon';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-      react()
-  ],
+  integrations: [react(), icon()],
 
   vite: {
       plugins: [tailwindcss()],

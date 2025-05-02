@@ -1,31 +1,29 @@
-<footer id="contact" class="bg-[#0096c7] text-white text-center p-8">
-    <h2 class="text-[1.17em] font-bold mb-4">
-        Contact Me
-    </h2>
-    <p class="text-white">
-        You can contact me through:
-    </p>
-    <div class="flex justify-center gap-8 mt-6">
-        <a href="mailto:francovargasjuandario@gmail.com" class="social-icon w-[50px] h-[50px] bg-[rgba(255,255,255,0.1)] border flex items-center justify-center rounded-[50%] border-solid border-[rgba(255,255,255,0.2)]" aria-label="Email">
-            <i class="fas fa-envelope text-2xl text-white"></i>
+---
+import { Icon } from 'astro-icon/components'
+const { currentPage } = Astro.props;
+---
+
+<footer class="bg-gradient-to-r from-[#0096c7] via-white to-white text-[#0096c7] text-center flex-none fixed bottom-0 left-0 w-full" style="height: 80px;">
+    <nav class="flex justify-center space-x-4 items-center h-full flex-wrap sm:space-x-6 md:space-x-8 lg:space-x-10">
+        <a href="/" class:font-bold={ currentPage === 'home'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
+            <Icon name="home" class="text-xl sm:text-2xl" />
+            <span>Home</span>
         </a>
-        <a href="https://github.com/JuanchiFranco" target="_blank" class="social-icon w-[50px] h-[50px] bg-[rgba(255,255,255,0.1)] border flex items-center justify-center rounded-[50%] border-solid border-[rgba(255,255,255,0.2)]" aria-label="GitHub">
-            <i class="fab fa-github text-2xl text-white"></i>
+        <a href="/about" class:font-bold={ currentPage === 'about'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
+            <Icon name="about" class="text-xl sm:text-2xl" />
+            <span>About</span>
         </a>
-        <a href="https://www.linkedin.com/in/juan-dar%C3%ADo-franco-vargas-18906822b/" target="_blank" class="social-icon w-[50px] h-[50px] bg-[rgba(255,255,255,0.1)] border flex items-center justify-center rounded-[50%] border-solid border-[rgba(255,255,255,0.2)]" aria-label="LinkedIn">
-            <i class="fab fa-linkedin text-2xl text-white"></i>
+        <a href="/projects" class:font-bold={ currentPage === 'projects'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
+            <Icon name="folder" class="text-xl sm:text-2xl" />
+            <span>Projects</span>
         </a>
-    </div>
+        <a href="/skills" class:font-bold={ currentPage === 'skills'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
+            <Icon name="skills" class="text-xl sm:text-2xl" />
+            <span>Skills</span>
+        </a>
+        <a href="/contact" class:font-bold={ currentPage === 'contact'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
+            <Icon name="contact" class="text-xl sm:text-2xl" />
+            <span>Contact</span>
+        </a>
+    </nav>
 </footer>
-
-<style>
-    .social-icon {
-        transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-    }
-
-    .social-icon:hover {
-        transform: translateY(-3px);
-        background-color: rgba(255,255,255,0.2);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-</style>

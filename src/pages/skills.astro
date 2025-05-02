@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SkillSection from '../components/SkillSection.astro';
+const partial = Astro.url.searchParams.has('partial');
+---
+
+{partial 
+	? <SkillSection />
+	: (
+	  <Layout currentPage="skills">       
+		<SkillSection />
+	  </Layout>
+	)
+}

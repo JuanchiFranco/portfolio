@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectsSection from '../components/ProjectsSection.astro';
+const partial = Astro.url.searchParams.has('partial');
+---
+
+{partial 
+	? <div style="height: 100%; overflow: hidden; display: flex; flex-direction: column; margin: 2rem; padding: 0; max-width: 100%; box-sizing: border-box;">
+			<ProjectsSection />
+		</div>
+	: (
+	  <Layout currentPage="about">
+		<div style="height: 100%; overflow: hidden; display: flex; flex-direction: column; margin: 2rem; padding: 0; max-width: 100%; box-sizing: border-box;">
+		  <ProjectsSection />
+		</div>
+	  </Layout>
+	)
+}
+
+<style>
+  @media (max-width: 768px) {
+	div {
+	  margin: 1rem;
+	  padding: 0.5rem;
+	  flex-direction: column;
+	}
+  }
+
+  @media (max-width: 480px) {
+	div {
+	  margin: 0.5rem;
+	  padding: 0.25rem;
+	}
+  }
+</style>

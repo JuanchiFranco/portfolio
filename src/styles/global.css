@@ -15,32 +15,47 @@
     --color-border: rgba(0, 0, 0, 0.1);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /*=============================================
     GLOBAL RESET & BASE
 =============================================*/
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Lucida Console", "Courier New", monospace;
     line-height: 1.6;
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /*=============================================
     TYPOGRAPHY HIGHLIGHTS
 =============================================*/
 .highlight {
-    color: #00b4d8;
+    color: #016074;
     font-weight: bold;
 }
 
 strong {
-    color: #00b4d8
+    color: #016074
 }
 
 em {
-    color: #0096c7;
+    color: #016074;
+}
+
+.parallax-section {
+    position: relative;
+    height: 100vh;
+    background-attachment: fixed;    /* fija el fondo */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
