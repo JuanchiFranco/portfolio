@@ -10,12 +10,7 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), icon({
-    include: {
-      // Include only three `mdi` icons in the bundle
-      mdi: ['account', 'account-plus', 'account-minus'],
-      // Include all `uis` icons
-      uis: ['*']
-    }
+    iconDir: "src/icons/",
   })],
 
   vite: {
