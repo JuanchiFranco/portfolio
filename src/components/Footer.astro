@@ -7,23 +7,23 @@ const { currentPage } = Astro.props;
 <footer class="bg-gradient-to-r from-[#0096c7] via-white to-white text-[#0096c7] text-center flex-none fixed bottom-0 left-0 w-full" style="height: 80px;">
     <nav class="flex justify-center space-x-4 items-center h-full flex-wrap sm:space-x-6 md:space-x-8 lg:space-x-10">
         <a href="/" class:font-bold={ currentPage === 'home'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
-            <Icon name="home" class="text-xl sm:text-2xl" />
+            <Icon name="ic:outline-home" class="text-xl sm:text-2xl" />
             <span>Home</span>
         </a>
         <a href="/about" class:font-bold={ currentPage === 'about'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
-            <Icon name="about" class="text-xl sm:text-2xl" />
+            <Icon name="ix:about" class="text-xl sm:text-2xl" />
             <span>About</span>
         </a>
         <a href="/projects" class:font-bold={ currentPage === 'projects'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
-            <Icon name="folder" class="text-xl sm:text-2xl" />
+            <Icon name="gravity-ui:folder-code" class="text-xl sm:text-2xl" />
             <span>Projects</span>
         </a>
         <a href="/skills" class:font-bold={ currentPage === 'skills'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
-            <Icon name="skills" class="text-xl sm:text-2xl" />
+            <Icon name="mdi:brain" class="text-xl sm:text-2xl" />
             <span>Skills</span>
         </a>
         <a href="/contact" class:font-bold={ currentPage === 'contact'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
-            <Icon name="contact" class="text-xl sm:text-2xl" />
+            <Icon name="hugeicons:contact-01" class="text-xl sm:text-2xl" />
             <span>Contact</span>
         </a>
     </nav>
