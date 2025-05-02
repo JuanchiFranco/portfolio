@@ -1,5 +1,14 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import HomeSection from '../components/HomeSection.astro';
+const partial = Astro.url.searchParams.has('partial');
 ---
 
-<HomeSection />
+{partial 
+	? <HomeSection />
+	: (
+	  <Layout currentPage="home">
+		<HomeSection />
+	  </Layout>
+	)
+}
