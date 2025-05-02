@@ -1,14 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HomeSection from '../components/HomeSection.astro';
-const partial = Astro.url.searchParams.has('partial');
+
+const url = new URL(Astro.request.url);
+const partial = url.searchParams.has('partial');
 ---
 
 {partial 
 	? <HomeSection />
 	: (
-	  <Layout currentPage="contact">
+		<Layout currentPage="home">
 		<HomeSection />
-	  </Layout>
+		</Layout>
 	)
 }
