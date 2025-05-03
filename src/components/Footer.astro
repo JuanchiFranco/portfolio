@@ -5,26 +5,55 @@ const { currentPage } = Astro.props;
 ---
 
 <footer class="bg-gradient-to-r from-[#0096c7] via-white to-white text-[#0096c7] text-center flex-none fixed bottom-0 left-0 w-full" style="height: 80px;">
-    <nav class="flex justify-center space-x-4 items-center h-full flex-wrap sm:space-x-6 md:space-x-8 lg:space-x-10">
-        <a href="/" class:font-bold={ currentPage === 'home'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
-            <Icon name="ic:outline-home" class="text-xl sm:text-2xl" />
+    <nav class="flex justify-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-8 items-center h-full flex-wrap">
+        <a href="/" class:font-bold={ currentPage === 'home'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+            <Icon name="ic:outline-home" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
             <span>Home</span>
         </a>
-        <a href="/about" class:font-bold={ currentPage === 'about'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
-            <Icon name="ix:about" class="text-xl sm:text-2xl" />
+        <a href="/about" class:font-bold={ currentPage === 'about'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+            <Icon name="ix:about" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
             <span>About</span>
         </a>
-        <a href="/projects" class:font-bold={ currentPage === 'projects'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
-            <Icon name="gravity-ui:folder-code" class="text-xl sm:text-2xl" />
+        <a href="/projects" class:font-bold={ currentPage === 'projects'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+            <Icon name="gravity-ui:folder-code" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
             <span>Projects</span>
         </a>
-        <a href="/skills" class:font-bold={ currentPage === 'skills'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
-            <Icon name="mdi:brain" class="text-xl sm:text-2xl" />
+        <a href="/skills" class:font-bold={ currentPage === 'skills'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+            <Icon name="mdi:brain" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
             <span>Skills</span>
         </a>
-        <a href="/contact" class:font-bold={ currentPage === 'contact'} class="bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 rounded flex items-center flex-col text-sm sm:text-base">
-            <Icon name="hugeicons:contact-01" class="text-xl sm:text-2xl" />
+        <a href="/contact" class:font-bold={ currentPage === 'contact'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+            <Icon name="hugeicons:contact-01" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
             <span>Contact</span>
         </a>
     </nav>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('footer nav a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+
+                // Resaltar el enlace activo
+                navLinks.forEach(navLink => {
+                    navLink.classList.remove('bg-[#005F8A]', 'text-white', 'scale-110');
+                    navLink.classList.add('bg-transparent', 'text-[#0096c7]');
+                });
+                link.classList.add('bg-[#005F8A]', 'text-white', 'scale-110');
+                link.classList.remove('bg-transparent', 'text-[#0096c7]');
+            });
+        });
+    });
+</script>
+
+<style>
+    footer nav a {
+        transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+    footer nav a.scale-110 {
+        transform: scale(1.1);
+    }
+</style>

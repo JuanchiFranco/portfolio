@@ -28,11 +28,12 @@
           index = (index + 1) % texts.length;
         }
 
-        setTimeout(typeEffect, 1000); // Pausa antes de cambiar
+        // si ya terminó de escribir, espera 2 segundos antes de empezar a borrar
+        setTimeout(typeEffect, isDeleting ? 2500 : 50);
       }
     };
 
-    typeEffect();
+    setTimeout(typeEffect, 3);
   });
   
 </script>
