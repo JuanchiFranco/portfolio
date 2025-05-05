@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon/components'
 const { currentPage } = Astro.props;
 ---
 
-<footer class="bg-gradient-to-r from-[#0096c7] via-white to-white text-[#0096c7] text-center flex-none fixed bottom-0 left-0 w-full" style="height: 80px;">
+<footer class="bg-gradient-to-r from-[#0096c7] via-white to-white text-[#0096c7] text-center flex-none fixed bottom-0 left-0 w-full z-20" style="height: 80px;">
     <nav class="flex justify-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-8 items-center h-full flex-wrap">
         <a href="/" class:font-bold={ currentPage === 'home'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
             <Icon name="ic:outline-home" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
