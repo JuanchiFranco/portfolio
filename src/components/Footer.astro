@@ -14,6 +14,10 @@ const { currentPage } = Astro.props;
             <Icon name="ix:about" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
             <span>About</span>
         </a>
+        <a href="/experience" class:font-bold={ currentPage === 'experience'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+            <Icon name="ix:work-case" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
+            <span>Experience</span>
+        </a>
         <a href="/projects" class:font-bold={ currentPage === 'projects'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
             <Icon name="gravity-ui:folder-code" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
             <span>Projects</span>

@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ExperienceSection from '../components/ExperienceSection.astro';
+const partial = Astro.url.searchParams.has('partial');
+---
+
+{partial 
+	? <ExperienceSection />
+	: (
+	  <Layout currentPage="experience">
+		<ExperienceSection />
+	  </Layout>
+	)
+}
