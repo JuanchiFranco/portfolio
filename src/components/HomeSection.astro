@@ -5,18 +5,18 @@ import profileImage from "../assets/profile.jpg";
 import { Icon } from "astro-icon/components";
 ---
 
-<section id="home" class="text-[#0096c7] text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center">
-    <Image src={profileImage} alt="Profile Picture" class="w-[150px] h-[150px] sm:w-[120px] sm:h-[120px] object-cover rounded-[50%] border-[3px] border-solid border-[#00b4d8]" width={200} height={200} loading="lazy" />
-    <h1 class="text-[2.5rem] sm:text-[2rem] mb-2 font-bold">Hey, I'm Juan Franco Vargas</h1>
-    <h2 id="dynamic-text" class="text-[1.5rem] sm:text-[1.2rem] mb-4 h-[3em] sm:h-[3.5em] overflow-hidden">Backend Developer</h2>
-    <div class="flex gap-4 mt-4">
-        <a href="https://github.com/JuanchiFranco" target="_blank" rel="noopener noreferrer" class="text-[#00b4d8] text-[2rem] sm:text-[1.5rem] hover:text-[#0077b6]">
+<section id="home" class="text-[#0096c7] text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
+    <Image src={profileImage} alt="Profile Picture" class="w-[150px] h-[150px] sm:w-[120px] sm:h-[120px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] object-cover rounded-[50%] border-[3px] border-solid border-[#00b4d8]" width={500} height={500} loading="lazy" />
+    <h1 class="text-[2.5rem] sm:text-[2rem] md:text-[2.8rem] lg:text-[3rem] mb-2 font-bold">Hey, I'm Juan Franco Vargas</h1>
+    <h2 id="dynamic-text" class="text-[1.5rem] sm:text-[1.2rem] md:text-[1.8rem] lg:text-[2rem] mb-4 h-[3em] sm:h-[3.5em] md:h-[4em] lg:h-[4.5em] overflow-hidden">Backend Developer</h2>
+    <div class="flex gap-8 mt-4 sm:gap-6 md:gap-10 lg:gap-12">
+        <a href="https://github.com/JuanchiFranco" target="_blank" rel="noopener noreferrer" class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]">
              <Icon name="mdi:github" />
         </a>
-        <a href="https://linkedin.com/in/juanfrancovargas-dev/" target="_blank" rel="noopener noreferrer" class="text-[#00b4d8] text-[2rem] sm:text-[1.5rem] hover:text-[#0077b6]">
+        <a href="https://linkedin.com/in/juanfrancovargas-dev/" target="_blank" rel="noopener noreferrer" class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]">
             <Icon name="mdi:linkedin" />
         </a>
-        <a href="mailto:francovargasjuandario@gmail.com" class="text-[#00b4d8] text-[2rem] sm:text-[1.5rem] hover:text-[#0077b6]">
+        <a href="mailto:francovargasjuandario@gmail.com" class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]">
             <Icon name="ic:baseline-email" />
         </a>
     </div>
@@ -33,17 +33,19 @@ import { Icon } from "astro-icon/components";
 
         if (!isDeleting && charIndex < current.length) {
             charIndex++;
-            setTimeout(typeEffect, 150);
+            setTimeout(typeEffect, 100);
         } else if (isDeleting && charIndex > 0) {
             charIndex--;
-            setTimeout(typeEffect, 100);
+            setTimeout(typeEffect, 50);
         } else {
             isDeleting = !isDeleting;
             if (!isDeleting) index = (index + 1) % texts.length;
-            setTimeout(typeEffect, 1000);
+            
+            // si ya terminó de escribir, espera 2 segundos antes de empezar a borrar
+            setTimeout(typeEffect, isDeleting ? 2500 : 50);
         }
     }
 
     // Ejecutar el efecto cada vez que el componente se renderice
-    typeEffect();
+    setTimeout(typeEffect, 3);
 </script>

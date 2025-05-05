@@ -8,7 +8,7 @@ export const projects = [
     {
         title: "Unit Converter",
         status: "finished",
-        description: "My personal portfolio website, built with React and Tailwind CSS.",
+        description: "A responsive web page organized into separate sections for each measurement category—such as length, weight, and temperature—where users can enter a value, choose their “from” and “to” units via dropdown menus, and instantly see the converted result.",
         image: unitConverter,
         alt: "Unit Converter Picture",
         repository: "https://github.com/JuanchiFranco/unit-converter",
