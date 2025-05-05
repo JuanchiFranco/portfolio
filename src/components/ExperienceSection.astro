@@ -1,0 +1,49 @@
+---
+// src/pages/experiencia.astro
+import JobItem from './JobFunctions.jsx';
+
+const jobs = [
+    {
+        name: 'External Backend Developer',
+        company: 'AB-InBev',
+        date: '2024 - 2025',
+        description: [
+        'I developed and maintained applications in Strapi CMS (a new technology implemented by the company) on large-scale projects.',
+        'I designed and implemented approximately ten custom plugins for Strapi CMS, extending the APIs with features such as advanced filters, frontend component management, report generation, and Excel file uploads.',
+        'I implemented Node.js workers for efficient resource handling when processing bulk uploads and generating daily reports.',
+        'I developed and executed unit tests with Jest and PHPUnit, achieving over 80% coverage.',
+        'I identified and mitigated more than 30 vulnerabilities using Snyk and Apiiro, strengthening the security of internal APIs.',
+        'I led testing workshops for six developers, standardizing test creation and improving code quality.'
+        ],
+    },
+    {
+        name: 'Developer',
+        company: 'Freelance',
+        date: '2022 - 2023',
+        description: [
+        'I designed an artificial neural network for the management of lessons learned during the life cycle of a project, using the PMBOK project management methodology.',
+        ],
+    },
+];
+---
+
+<section
+    id="experiencia"
+    class="text-[#0096c7] text-center px-4 py-8 min-h-screen flex-1 overflow-y-auto flex flex-col items-center justify-center sm:px-6 sm:py-10 md:px-8 md:py-12 lg:px-10 lg:py-16 relative mt-16 mb-16"
+>
+        <h1 class="text-[2.5rem] mb-2 font-bold sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem]">
+                My experience
+        </h1>
+        <div class="timeline mt-8 w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 relative sm:p-4 md:p-6 lg:p-8">
+                {jobs.map((job, idx) => (
+                        <JobItem
+                                client:load
+                                key={idx}
+                                job={job}
+                                isEven={idx % 2 === 0}
+                                isLast={idx === jobs.length - 1}
+                                class="mb-6 sm:mb-4 md:mb-6 lg:mb-8"
+                        />
+                ))}
+        </div>
+</section>
