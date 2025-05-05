@@ -25,7 +25,7 @@ export default function JobItem({ job, isEven, isLast }) {
             className="mt-2 text-xs sm:text-sm font-medium text-[#0096c7] hover:underline"
             onClick={() => setExpanded(!expanded)}
           >
-            {expanded ? 'Ver menos' : 'Ver más'}
+            {expanded ? 'See less' : 'See more'}
           </button>
         )}
       </div>
