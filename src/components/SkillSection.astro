@@ -114,22 +114,22 @@ const skills = {
 }
 ---
 
-<section id="skills" class="text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center mt-8">
-    <h2 class="text-[#0096c7] mb-4 font-bold text-[2.5rem] sm:text-[2rem]">My Skills</h2>
+<section id="skills" class="text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center mt-8 mb-16">
+    <h2 class="text-[#0096c7] mb-4 font-bold text-[2.5rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem]">My Skills</h2>
     <div class="max-w-screen-xl mx-auto">
-      <table class="table-auto w-full border-collapse border border-[#0096c7] text-sm sm:text-xs">
+      <table class="bg-white table-auto w-full border-collapse border border-[#0096c7] text-sm sm:text-xs md:text-sm lg:text-base shadow-lg hover:shadow-xl transition-shadow">
         <thead>
           <tr>
-            <th class="border border-[#0096c7] px-4 py-2 text-[#0096c7] text-left">Category</th>
-            <th class="border border-[#0096c7] px-4 py-2 text-[#0096c7] text-left">Technologies</th>
+            <th class="border border-[#0096c7] px-4 py-2 text-[#0096c7] text-left sm:px-2 sm:py-1 md:px-3 md:py-2 lg:px-4 lg:py-2">Category</th>
+            <th class="border border-[#0096c7] px-4 py-2 text-[#0096c7] text-left sm:px-2 sm:py-1 md:px-3 md:py-2 lg:px-4 lg:py-2">Technologies</th>
           </tr>
         </thead>
         <tbody>
           {skillCategories.map(({ key, label }) => (
             <tr>
-              <td class="border border-[#0096c7] px-4 py-2 text-[#0096c7] font-bold">{label}</td>
-              <td class="border border-[#0096c7] px-4 py-2">
-                <div class="flex gap-4 flex-wrap">
+              <td class="border border-[#0096c7] px-4 py-2 text-[#0096c7] font-bold sm:px-2 sm:py-1 md:px-3 md:py-2 lg:px-4 lg:py-2">{label}</td>
+              <td class="border border-[#0096c7] px-4 py-2 sm:px-2 sm:py-1 md:px-3 md:py-2 lg:px-4 lg:py-2">
+                <div class="flex gap-4 flex-wrap sm:gap-2 md:gap-3 lg:gap-4">
                   {skills[key].map((item) => (
                     <SkillItem {...item} />
                   ))}
