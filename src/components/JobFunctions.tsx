@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 
-export default function JobItem({ job, isEven, isLast }) {
+interface JobDescription {
+  name: string;
+  company: string;
+  date: string;
+  description: string[];
+}
+
+interface JobItemProps extends React.HTMLAttributes<HTMLDivElement> {
+  job: JobDescription;
+  isEven: boolean;
+  isLast: boolean;
+  className?: string;
+  'client:load'?: boolean;
+}
+
+export default function JobItem({ job, isEven, isLast, className }: JobItemProps) {
   const [expanded, setExpanded] = useState(false);
   const itemsToShow = expanded ? job.description.length : 1;
 
@@ -8,7 +23,7 @@ export default function JobItem({ job, isEven, isLast }) {
     <div
       className={`timeline-item mb-0 flex ${
         isEven ? 'justify-start' : 'justify-end'
-      } relative ${isLast ? 'sm:mt-0 mt-4' : ''}`}
+      } relative ${isLast ? 'sm:mt-0 mt-4' : ''} ${className || ''}`}
     >
       <div className="timeline-content bg-white shadow-md hover:shadow-xl transition-shadow rounded-lg p-4 w-full sm:w-8/12 md:w-6/12 lg:w-5/12 relative">
         <h2 className="text-base sm:text-lg font-semibold text-center">
@@ -25,7 +40,7 @@ export default function JobItem({ job, isEven, isLast }) {
             className="mt-2 text-xs sm:text-sm font-medium text-[#0096c7] hover:underline"
             onClick={() => setExpanded(!expanded)}
           >
-            {expanded ? 'See less' : 'See more'}
+            {expanded ? 'Ver menos' : 'Ver más'}
           </button>
         )}
       </div>

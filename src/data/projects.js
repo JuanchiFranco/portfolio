@@ -6,11 +6,11 @@ import unitConverter from "../assets/projects/converter.jpg";
 
 export const projects = [
     {
-        title: "Unit Converter",
-        status: "finished",
-        description: "A responsive web page organized into separate sections for each measurement category—such as length, weight, and temperature—where users can enter a value, choose their “from” and “to” units via dropdown menus, and instantly see the converted result.",
+        title: "Conversor de Unidades",
+        status: "completado",
+        description: "Una página web receptiva organizada en secciones separadas para cada categoría de medida, como longitud, peso y temperatura, donde los usuarios pueden ingresar un valor, elegir las unidades de origen y destino mediante menús desplegables y ver instantáneamente el resultado convertido.",
         image: unitConverter,
-        alt: "Unit Converter Picture",
+        alt: "Conversor de Unidades",
         repository: "https://github.com/JuanchiFranco/unit-converter",
         technologies: [
             { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tailwindcss.svg" },
@@ -22,10 +22,10 @@ export const projects = [
     },
     {
         title: "Photo Plus",
-        status: "finished",
-        description: "The photo-plus is a strapi plugin that allows you to take pictures with your camera and download them to the folder on your local machine.",
+        status: "completado",
+        description: "Photo-plus es un plugin para Strapi que permite tomar fotografías con la cámara y guardarlas en una carpeta de la máquina local.",
         image: photoPlus,
-        alt: "Photo-plus Picture",
+        alt: "Photo-plus",
         repository: "https://github.com/JuanchiFranco/photo-plus",
         technologies: [
             { name: "Strapi", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/strapi.svg" },
@@ -35,11 +35,11 @@ export const projects = [
         liveDemo: null
     },
     {
-        title: "Codegen QR Barcodes",
-        status: "finished",
-        description: "CodeGen is a web application that allows you to generate, customize and export QR codes and barcodes.",
+        title: "Generador de Códigos QR y Barras",
+        status: "completado",
+        description: "CodeGen es una aplicación web que permite generar, personalizar y exportar códigos QR y códigos de barras.",
         image: codegen,
-        alt: "CodeGen Picture",
+        alt: "CodeGen",
         repository: "https://github.com/JuanchiFranco/codegen-qr-barcodes",
         technologies: [
             { name: "Express", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/express.svg" },
@@ -52,11 +52,11 @@ export const projects = [
         liveDemo: null
     },
     {
-        title: "Interactive CMS",
-        status: "in progress",
-        description: "CMS to manage interactive content such as quizzes, surveys and mini-games.",
+        title: "CMS Interactivo",
+        status: "en progreso",
+        description: "Sistema de gestión de contenido para administrar contenido interactivo como cuestionarios, encuestas y mini-juegos.",
         image: interactiveCMS,
-        alt: "Interactive CMS Picture",
+        alt: "CMS Interactivo",
         repository: "https://github.com/JuanchiFranco/interactive-cms",
         technologies: [
             { name: "Next.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nextdotjs.svg" },
@@ -69,11 +69,11 @@ export const projects = [
         liveDemo: null
     },
     {
-        title: "Future Project",
+        title: "Próximo Proyecto",
         status: null,
-        description: "Stay tuned for my next exciting project!",
+        description: "¡Mantente atento para mi próximo proyecto emocionante!",
         image: comingSoonImage,
-        alt: "Coming Soon",
+        alt: "Próximo Proyecto",
         repository: null,
         technologies: [],
         liveDemo: null
