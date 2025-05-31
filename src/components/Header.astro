@@ -3,37 +3,61 @@
 </header>
 
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const texts = ["Juan Franco", "Desarrollador Backend", "Ingeniero de Sistemas"];
-    let index = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+  (function() {
+    // Check if the header effect is already running
+    if (window.headerEffectRunning) return;
+    window.headerEffectRunning = true;
 
-    const typeEffect = () => {
-      const currentText = texts[index];
-      const displayedText = currentText.slice(0, charIndex);
+    document.addEventListener('DOMContentLoaded', () => {
+      const headerTexts = ["Juan Franco", "Desarrollador Backend", "Ingeniero de Sistemas"];
+      let headerIndex = 0;
+      let headerCharIndex = 0;
+      let headerIsDeleting = false;
+      let headerTimeout;
 
-      document.getElementById("dynamic-heading").textContent = displayedText;
-
-      if (!isDeleting && charIndex < currentText.length) {
-        charIndex++;
-        setTimeout(typeEffect, 100); // Velocidad al escribir
-      } else if (isDeleting && charIndex > 0) {
-        charIndex--;
-        setTimeout(typeEffect, 50); // Velocidad al borrar
-      } else {
-        isDeleting = !isDeleting;
-
-        if (!isDeleting) {
-          index = (index + 1) % texts.length;
+      const typeEffect = () => {
+        const currentText = headerTexts[headerIndex];
+        const displayedText = currentText.slice(0, headerCharIndex);
+        const heading = document.getElementById("dynamic-heading");
+        
+        if (heading) {
+          heading.textContent = displayedText;
         }
 
-        // si ya terminó de escribir, espera 2 segundos antes de empezar a borrar
-        setTimeout(typeEffect, isDeleting ? 2500 : 50);
-      }
-    };
+        if (!headerIsDeleting && headerCharIndex < currentText.length) {
+          headerCharIndex++;
+          headerTimeout = setTimeout(typeEffect, 100); // Velocidad al escribir
+        } else if (headerIsDeleting && headerCharIndex > 0) {
+          headerCharIndex--;
+          headerTimeout = setTimeout(typeEffect, 50); // Velocidad al borrar
+        } else {
+          headerIsDeleting = !headerIsDeleting;
 
-    setTimeout(typeEffect, 3);
-  });
-  
+          if (!headerIsDeleting) {
+            headerIndex = (headerIndex + 1) % headerTexts.length;
+          }
+
+          // si ya terminó de escribir, espera 2 segundos antes de empezar a borrar
+          headerTimeout = setTimeout(typeEffect, headerIsDeleting ? 2500 : 50);
+        }
+      };
+
+      // Cleanup function
+      function cleanup() {
+        if (headerTimeout) {
+          clearTimeout(headerTimeout);
+        }
+        window.headerEffectRunning = false;
+      }
+
+
+      // Start the effect
+      headerTimeout = setTimeout(typeEffect, 3);
+
+      // Clean up on component unmount
+      if (typeof window !== 'undefined') {
+        window.addEventListener('beforeunload', cleanup);
+      }
+    });
+  })();
 </script>

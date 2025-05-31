@@ -23,29 +23,52 @@ import { Icon } from "astro-icon/components";
 </section>
 
 <script is:inline>
-    const texts = ["Desarrollador Backend", "Ingeniero de Sistemas", "Apasionado por el Desarrollo Web"];
-    let index = 0, charIndex = 0, isDeleting = false;
+    (function() {
+        // Check if the effect is already running
+        if (window.homeEffectRunning) return;
+        window.homeEffectRunning = true;
 
-    function typeEffect() {
-        const current = texts[index];
-        const displayed = current.slice(0, charIndex);
-        document.getElementById("dynamic-text").textContent = displayed;
+        const homeTexts = ["Desarrollador Backend", "Ingeniero de Sistemas", "Apasionado por el Desarrollo Web"];
+        let homeIndex = 0, homeCharIndex = 0, homeIsDeleting = false;
+        let typeEffectTimeout;
 
-        if (!isDeleting && charIndex < current.length) {
-            charIndex++;
-            setTimeout(typeEffect, 100);
-        } else if (isDeleting && charIndex > 0) {
-            charIndex--;
-            setTimeout(typeEffect, 50);
-        } else {
-            isDeleting = !isDeleting;
-            if (!isDeleting) index = (index + 1) % texts.length;
-            
-            // si ya terminó de escribir, espera 2 segundos antes de empezar a borrar
-            setTimeout(typeEffect, isDeleting ? 2500 : 50);
+        function typeEffect() {
+            const current = homeTexts[homeIndex];
+            const displayed = current.slice(0, homeCharIndex);
+            const element = document.getElementById("dynamic-text");
+            if (element) {
+                element.textContent = displayed;
+            }
+
+            if (!homeIsDeleting && homeCharIndex < current.length) {
+                homeCharIndex++;
+                typeEffectTimeout = setTimeout(typeEffect, 100);
+            } else if (homeIsDeleting && homeCharIndex > 0) {
+                homeCharIndex--;
+                typeEffectTimeout = setTimeout(typeEffect, 50);
+            } else {
+                homeIsDeleting = !homeIsDeleting;
+                if (!homeIsDeleting) homeIndex = (homeIndex + 1) % homeTexts.length;
+                
+                // si ya terminó de escribir, espera 2 segundos antes de empezar a borrar
+                typeEffectTimeout = setTimeout(typeEffect, homeIsDeleting ? 2500 : 50);
+            }
         }
-    }
 
-    // Ejecutar el efecto cada vez que el componente se renderice
-    setTimeout(typeEffect, 3);
+        // Cleanup function
+        function cleanup() {
+            if (typeEffectTimeout) {
+                clearTimeout(typeEffectTimeout);
+            }
+            window.homeEffectRunning = false;
+        }
+
+        // Start the effect
+        typeEffectTimeout = setTimeout(typeEffect, 3);
+
+        // Clean up on component unmount
+        if (typeof window !== 'undefined') {
+            window.addEventListener('beforeunload', cleanup);
+        }
+    })();
 </script>
