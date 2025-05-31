@@ -1,5 +1,5 @@
-<header class="bg-gradient-to-r from-white via-white to-[#0096c7] text-[#0096c7] text-center fixed top-0 left-0 w-full z-50 px-4 py-4 flex-none" style="height: 80px;">
-  <h1 id="dynamic-heading" class="m-0 text-center block text-[1.5em] sm:text-[2em] font-bold">Juan Franco</h1>
+<header class="bg-gradient-to-r from-white via-white to-[#0096c7] text-[#0096c7] fixed top-0 left-0 w-full z-50 h-20 flex items-center justify-center">
+  <h1 id="dynamic-heading" class="m-0 text-[1.8rem] sm:text-[2rem] md:text-[2.2rem] font-bold"></h1>
 </header>
 
 <script is:inline>
@@ -21,7 +21,12 @@
         const heading = document.getElementById("dynamic-heading");
         
         if (heading) {
-          heading.textContent = displayedText;
+          // Usar un cursor parpadeante
+          const cursor = !headerIsDeleting && headerCharIndex === currentText.length ? '<span class="animate-pulse">|</span>' : '';
+          heading.innerHTML = displayedText + cursor;
+          
+          // Asegurar que el contenedor mantenga la altura
+          heading.style.minHeight = window.getComputedStyle(heading).height;
         }
 
         if (!headerIsDeleting && headerCharIndex < currentText.length) {
@@ -38,7 +43,7 @@
           }
 
           // si ya terminó de escribir, espera 2 segundos antes de empezar a borrar
-          headerTimeout = setTimeout(typeEffect, headerIsDeleting ? 2500 : 50);
+          headerTimeout = setTimeout(typeEffect, headerIsDeleting ? 2000 : 100);
         }
       };
 

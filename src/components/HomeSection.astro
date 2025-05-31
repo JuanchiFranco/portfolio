@@ -8,7 +8,7 @@ import { Icon } from "astro-icon/components";
 <section id="home" class="text-[#0096c7] text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
     <Image src={profileImage} alt="Profile Picture" class="w-[150px] h-[150px] sm:w-[120px] sm:h-[120px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] object-cover rounded-[50%] border-[3px] border-solid border-[#00b4d8]" width={500} height={500} loading="lazy" />
     <h1 class="text-[2.5rem] sm:text-[2rem] md:text-[2.8rem] lg:text-[3rem] mb-2 font-bold">Hola, soy Juan Franco Vargas</h1>
-    <h2 id="dynamic-text" class="text-[1.5rem] sm:text-[1.2rem] md:text-[1.8rem] lg:text-[2rem] mb-4 h-[3em] sm:h-[3.5em] md:h-[4em] lg:h-[4.5em] overflow-hidden">Backend Developer</h2>
+    <h2 id="dynamic-text" class="text-[1.5rem] sm:text-[1.2rem] md:text-[1.8rem] lg:text-[2rem] mb-4 min-h-[3em] flex items-center justify-center"></h2>
     <div class="flex gap-8 mt-4 sm:gap-6 md:gap-10 lg:gap-12">
         <a href="https://github.com/JuanchiFranco" target="_blank" rel="noopener noreferrer" class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]">
              <Icon name="mdi:github" />
@@ -36,8 +36,14 @@ import { Icon } from "astro-icon/components";
             const current = homeTexts[homeIndex];
             const displayed = current.slice(0, homeCharIndex);
             const element = document.getElementById("dynamic-text");
+            
             if (element) {
-                element.textContent = displayed;
+                // Usar un cursor parpadeante
+                const cursor = !homeIsDeleting && homeCharIndex === current.length ? '|' : '';
+                element.innerHTML = displayed + `<span class="animate-pulse">${cursor}</span>`;
+                
+                // Asegurar que el contenedor mantenga la altura
+                element.style.minHeight = window.getComputedStyle(element).height;
             }
 
             if (!homeIsDeleting && homeCharIndex < current.length) {
@@ -45,13 +51,13 @@ import { Icon } from "astro-icon/components";
                 typeEffectTimeout = setTimeout(typeEffect, 100);
             } else if (homeIsDeleting && homeCharIndex > 0) {
                 homeCharIndex--;
-                typeEffectTimeout = setTimeout(typeEffect, 50);
+                typeEffectTimeout = setTimeout(typeEffect, 30); // Más rápido al borrar
             } else {
                 homeIsDeleting = !homeIsDeleting;
                 if (!homeIsDeleting) homeIndex = (homeIndex + 1) % homeTexts.length;
                 
-                // si ya terminó de escribir, espera 2 segundos antes de empezar a borrar
-                typeEffectTimeout = setTimeout(typeEffect, homeIsDeleting ? 2500 : 50);
+                // Tiempo de pausa más corto
+                typeEffectTimeout = setTimeout(typeEffect, homeIsDeleting ? 1000 : 100);
             }
         }
 
@@ -64,7 +70,7 @@ import { Icon } from "astro-icon/components";
         }
 
         // Start the effect
-        typeEffectTimeout = setTimeout(typeEffect, 3);
+        typeEffectTimeout = setTimeout(typeEffect, 100); // Pequeño retraso inicial
 
         // Clean up on component unmount
         if (typeof window !== 'undefined') {
