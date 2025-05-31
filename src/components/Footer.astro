@@ -5,30 +5,30 @@ const { currentPage } = Astro.props;
 ---
 
 <footer class="bg-gradient-to-r from-[#0096c7] via-white to-white text-[#0096c7] text-center flex-none fixed bottom-0 left-0 w-full z-20" style="height: 80px;">
-    <nav class="flex justify-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-8 items-center h-full flex-wrap">
-        <a href="/" class:font-bold={ currentPage === 'home'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+    <nav class="flex justify-start sm:justify-center space-x-2 sm:space-x-4 md:space-x-5 lg:space-x-6 items-center h-full flex-nowrap overflow-x-auto pb-2 px-2 w-full">
+        <a href="/" class:font-bold={ currentPage === 'home'} class="min-w-[70px] sm:min-w-[80px] md:min-w-[90px] lg:min-w-[100px] px-2 sm:px-3 md:px-4 lg:px-5 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-200 flex-shrink-0">
             <Icon name="ic:outline-home" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
-            <span>Home</span>
+            <span>Inicio</span>
         </a>
-        <a href="/about" class:font-bold={ currentPage === 'about'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+        <a href="/about" class:font-bold={ currentPage === 'about'} class="min-w-[70px] sm:min-w-[80px] md:min-w-[90px] lg:min-w-[100px] px-2 sm:px-3 md:px-4 lg:px-5 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-200 flex-shrink-0">
             <Icon name="ix:about" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
-            <span>About</span>
+            <span>Sobre mí</span>
         </a>
-        <a href="/experience" class:font-bold={ currentPage === 'experience'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+        <a href="/experience" class:font-bold={ currentPage === 'experience'} class="min-w-[70px] sm:min-w-[80px] md:min-w-[90px] lg:min-w-[100px] px-2 sm:px-3 md:px-4 lg:px-5 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-200 flex-shrink-0">
             <Icon name="ix:work-case" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
-            <span>Experience</span>
+            <span>Experiencia</span>
         </a>
-        <a href="/projects" class:font-bold={ currentPage === 'projects'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+        <a href="/projects" class:font-bold={ currentPage === 'projects'} class="min-w-[70px] sm:min-w-[80px] md:min-w-[90px] lg:min-w-[100px] px-2 sm:px-3 md:px-4 lg:px-5 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-200 flex-shrink-0">
             <Icon name="gravity-ui:folder-code" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
-            <span>Projects</span>
+            <span>Proyectos</span>
         </a>
-        <a href="/skills" class:font-bold={ currentPage === 'skills'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+        <a href="/skills" class:font-bold={ currentPage === 'skills'} class="min-w-[70px] sm:min-w-[80px] md:min-w-[90px] lg:min-w-[100px] px-2 sm:px-3 md:px-4 lg:px-5 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-200 flex-shrink-0">
             <Icon name="mdi:brain" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
-            <span>Skills</span>
+            <span>Habilidades</span>
         </a>
-        <a href="/contact" class:font-bold={ currentPage === 'contact'} class="w-20 sm:w-24 md:w-28 lg:w-32 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] px-2 sm:px-4 md:px-6 lg:px-8 rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg">
+        <a href="/contact" class:font-bold={ currentPage === 'contact'} class="min-w-[70px] sm:min-w-[80px] md:min-w-[90px] lg:min-w-[100px] px-2 sm:px-3 md:px-4 lg:px-5 bg-transparent hover:bg-[#b6b8b9] text-[#0096c7] rounded flex items-center flex-col text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-200 flex-shrink-0">
             <Icon name="hugeicons:contact-01" class="text-lg sm:text-xl md:text-2xl lg:text-3xl" />
-            <span>Contact</span>
+            <span>Contacto</span>
         </a>
     </nav>
 </footer>
