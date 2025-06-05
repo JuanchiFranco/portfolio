@@ -3,8 +3,26 @@ import codegen from "../assets/projects/CodeGen.jpg";
 import interactiveCMS from "../assets/projects/Interactve_cms.jpg";
 import comingSoonImage from "../assets/coming-soon.svg";
 import unitConverter from "../assets/projects/converter.jpg";
+import amiducielShop from "../assets/projects/AmiducielHome.jpg";
 
 export const projects = [
+    {
+        title: "ShopAmiduciel",
+        status: "en progreso",
+        description: "Plataforma de comercio electrónico para Amiduciel, con un frontend moderno en React y un backend en Strapi (CMS headless).",
+        image: amiducielShop,
+        alt: "ShopAmiduciel",
+        repository: "https://github.com/JuanchiFranco/Shop-Amiduciel",
+        technologies: [
+            { name: "React", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/react.svg" },
+            { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tailwindcss.svg" },
+            { name: "Axios", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/axios.svg" },
+            { name: "Strapi", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/strapi.svg" },
+            { name: "Node.js", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nodedotjs.svg" },
+            { name: "MySQL", icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mysql.svg" }
+        ],
+        liveDemo: null
+    },
     {
         title: "Conversor de Unidades",
         status: "completado",
