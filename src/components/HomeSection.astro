@@ -3,6 +3,7 @@ export const prerender = true;
 import { Image } from "astro:assets";
 import profileImage from "../assets/profile.jpg";
 import { Icon } from "astro-icon/components";
+const CURRICULUM_URL = import.meta.env.PUBLIC_CURRICULUM_URL;
 ---
 
 <section id="home" class="text-[#0096c7] text-center px-4 py-16 min-h-full flex-1 overflow-y-auto flex flex-col items-center justify-center sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
@@ -16,8 +17,9 @@ import { Icon } from "astro-icon/components";
         <a href="https://linkedin.com/in/juanfrancovargas-dev/" target="_blank" rel="noopener noreferrer" class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]">
             <Icon name="mdi:linkedin" />
         </a>
-        <a href="mailto:francovargasjuandario@gmail.com" class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]">
-            <Icon name="ic:baseline-email" />
+        <a href={CURRICULUM_URL} target="_blank" class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]">
+            <Icon name="mdi:file-document" />
+            <span class="sr-only">Curriculum Vitae</span>
         </a>
     </div>
 </section>
