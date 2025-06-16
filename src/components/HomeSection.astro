@@ -11,13 +11,30 @@ const CURRICULUM_URL = import.meta.env.PUBLIC_CURRICULUM_URL;
     <h1 class="text-[2.5rem] sm:text-[2rem] md:text-[2.8rem] lg:text-[3rem] mb-2 font-bold">Hola, soy Juan Franco Vargas</h1>
     <h2 id="dynamic-text" class="text-[1.5rem] sm:text-[1.2rem] md:text-[1.8rem] lg:text-[2rem] mb-4 min-h-[3em] flex items-center justify-center"></h2>
     <div class="flex gap-8 mt-4 sm:gap-6 md:gap-10 lg:gap-12">
-        <a href="https://github.com/JuanchiFranco" target="_blank" rel="noopener noreferrer" class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]">
-             <Icon name="mdi:github" />
+        <a 
+            href="https://github.com/JuanchiFranco" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]"
+            title="GitHub"
+        >
+            <Icon name="mdi:github" />
         </a>
-        <a href="https://linkedin.com/in/juanfrancovargas-dev/" target="_blank" rel="noopener noreferrer" class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]">
+        <a 
+            href="https://linkedin.com/in/juanfrancovargas-dev/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]"
+            title="LinkedIn"
+        >
             <Icon name="mdi:linkedin" />
         </a>
-        <a href={CURRICULUM_URL} target="_blank" class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]">
+        <a 
+            href={CURRICULUM_URL} 
+            target="_blank" 
+            class="text-[#005f73] text-[2rem] sm:text-[1.5rem] md:text-[2.2rem] lg:text-[2.5rem] hover:text-[#0077b6]"
+            title="Curriculum Vitae"
+        >
             <Icon name="mdi:file-document" />
             <span class="sr-only">Curriculum Vitae</span>
         </a>
